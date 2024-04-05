@@ -1,4 +1,5 @@
-let exampleEmptyVariable = null;
+function exampleStuff(){
+  let exampleEmptyVariable = null;
 let anotherEmptyVariable = undefined;
 
 console.log(exampleEmptyVariable, anotherEmptyVariable);
@@ -116,7 +117,9 @@ nik.hobbies[1].favouriteCodes[0] = "typescript";
 
 console.log(nik);
 
-
+/**
+ * Status of weather manually Set
+ */
 
 
 let weather = "rainy";
@@ -145,16 +148,51 @@ if (weather == "sunny") {
 } else {
   console.log("Crazy weather, am i right?");
 }
+}
 
 
+let pokemonTeam = [
+  "pikachu",
+  "squirtle",
+  "charmander",
+  "mew",
+];
 
+function logTheTeam () {
+  sortedTeam = pokemonTeam.sort();
 
+  let [firstPokemon, ...otherPokemon] = sortedTeam;
 
+  console.log(firstPokemon);
+  console.log(otherPokemon);
+   
+  do {
+    console.log(sortedTeam.pop());
+  } while (sortedTeam.length);
 
+  sortedTeam.push("blastoise");
 
+  for (let index = 0; index < sortedTeam.length; index++) {
+    console.log("Pokemon at index " + index + " is " + sortedTeam[index]);
+  }
+}
 
+// logTheTeam();
 
+const logTheTeamAlternate = (targetSize = 4) => {
+	// double equals is checking for value
+	// type coercion happens where possible automatically
+	if (pokemonTeam.length == targetSize){
+		console.log("There are + " + targetSize + " pokemon in the team");
+	}
 
+	// triple equals is checking for value AND data type
+	if (pokemonTeam.length === targetSize){
+		console.log("There are " +  targetSize  + " Pokemon in the team, this is from the strict equals comparison");
+	}
+}
+logTheTeamAlternate();
+logTheTeamAlternate(2);
 
 
 
