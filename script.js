@@ -194,6 +194,23 @@ const logTheTeamAlternate = (targetSize = 4) => {
 logTheTeamAlternate();
 logTheTeamAlternate(2);
 
+var smellStrength;
+
+function someSmellyFunction(){
+	smellStrength = 1;
+
+	let smellTotalStrength = (baseStrength, multiplier) => {
+		return baseStrength * multiplier;
+	}
+
+	return smellTotalStrength(smellStrength, 10);
+	// equivalent to:
+	// return 100;
+}
+
+console.log(smellStrength);
+console.log(someSmellyFunction());
+console.log(smellStrength);
 
 
 
