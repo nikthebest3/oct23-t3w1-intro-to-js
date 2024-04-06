@@ -208,10 +208,53 @@ function someSmellyFunction(){
 	// return 100;
 }
 
-console.log(smellStrength);
-console.log(someSmellyFunction());
-console.log(smellStrength);
+// console.log(smellStrength);
+// console.log(someSmellyFunction());
+// console.log(smellStrength);
+
+
+let person = {
+	name: "Alex",
+	greeting: (message) => {
+		console.log("Hello! I have a message for you: ");
+		console.log(message);
+	},
+    farewell: function (message) {
+        console.log("Bye bye! Here are some parting words: ");
+        console.log(message);
+    },
+    dance: (dance) => {
+        console.log("I'm gonna dance!");
+        // this.dance() is for JS classes, not objects
+        // recursive function, do not call
+        // it can crash your browser
+        person.dance();
+    },
+    listFavouritePokemon: (pokemonList, formatFunction) => {
+        console.log("Hi! I have some favourite Pokemon to share. THey are: ");
+        formatFunction(pokemonList);
+    }
+}
+
+function improvedTeamLogging(pokemonTeam){
+    let sortedReversedTeam = pokemonTeam.sort().reverse();
+    sortedReversedTeam.forEach(pokemonName => {
+        console.log(pokemonName);
+    });
+}
+
+person.listFavouritePokemon(["pikachu", "blastoise"], improvedTeamLogging);
 
 
 
 
+
+
+
+
+
+// person.greeting("message");
+
+// person.farewell("message");
+
+// person.dance();
